@@ -1,2 +1,2 @@
 # steamauth
-PHP Steam Auth
+Steam auth on PHP, using LightOpenID

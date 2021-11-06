@@ -1,0 +1,22 @@
+{
+    "name": "flamesone/steamauth",
+    "description": "Steam auth on PHP, using LightOpenID",
+    "type": "library",
+    "keywords": ["steam", "csgoauth", "csgo", "steamauth"],
+    "autoload": {
+        "psr-4": {
+            "Flamesone\\Steamauth\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nikita",
+            "email": "62756604+FlamesONE@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "license": "GPL-3.0-or-later",
+    "minimum-stability": "dev"
+}
