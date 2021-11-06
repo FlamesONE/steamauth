@@ -9,10 +9,20 @@ $data = [
 
 $steam = new Steam( $data["url"], $data["key"] );
 
-if( $steam->Auth() )
+try
 {
-    $steam->Handle( function($data)
-    {
-        print_r( $data );
-    });
+    !$_SESSION && $steam->Auth();
 }
+catch( Exception $e )
+{
+    header("/");
+}
+
+$steam->session( true );
+
+$steam->Handle( function($data)
+{
+    header("/");
+});
+
+print_r( $_SESSION );

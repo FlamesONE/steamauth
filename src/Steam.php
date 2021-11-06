@@ -57,7 +57,7 @@ class Steam
      */
     public function Auth()
     {
-        if ( ! $this->openid->mode ) 
+        if ( !$this->openid->mode ) 
         {
             $this->openid->identity = $this->steamurl;
 
@@ -82,7 +82,7 @@ class Steam
     {
         if( $this->openid->mode && $this->openid->mode != "cancel" )
         {
-            if( $this->openid->validate )
+            if( $this->openid->validate() )
             {
                 $matches = [];
 
@@ -97,6 +97,8 @@ class Steam
                 }
 
                 !$data["steamid"] && $data["steamid"] = $matches[1];
+
+                $this->addToSession( $data );
 
                 $callback && $callback( $data );
 
