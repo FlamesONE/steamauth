@@ -92,8 +92,8 @@ class Steam
       
                 if( $this->info )
                 {
-                    $url = sprintf( "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=%s&steamids=%s", $this->api_key, $matches[1] )['response']['players'][0];
-                    $data = json_decode( file_get_contents( $url ), true ); 
+                    $url = sprintf( "https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=%s&steamids=%s", $this->api_key, $matches[1] );
+                    $data = json_decode( file_get_contents( $url ), true )['response']['players'][0]; 
                 }
 
                 !$data["steamid"] && $data["steamid"] = $matches[1];
